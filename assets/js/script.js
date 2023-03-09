@@ -34,18 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
     populateActorGrid(femaleActorsContainer, femaleActors);
 });
 
-// Accordion
-const accordionHeaders = document.querySelectorAll('.accordion-header');
+// Accordion Functionality
+const accordionBtns = document.querySelectorAll(".accordion-btn");
 
-accordionHeaders.forEach(header => {
-  header.addEventListener('click', () => {
-    const accordionItem = header.parentElement;
-    accordionItem.classList.toggle('active');
-    const accordionContent = accordionItem.querySelector('.accordion-content');
-    if (accordionItem.classList.contains('active')) {
-      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-    } else {
-      accordionContent.style.maxHeight = 0;
-    }
+accordionBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.parentNode.classList.toggle("active");
   });
 });
